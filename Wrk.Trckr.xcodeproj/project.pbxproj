@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		7411A5161DF0CBE50000DDFD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		7411A5191DF0CC170000DDFD /* wrkwrk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wrkwrk.xcdatamodel; sourceTree = "<group>"; };
-		7423C97D1DF1892500669D37 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportsViewController.swift; path = ../ReportsViewController.swift; sourceTree = "<group>"; };
+		7423C97D1DF1892500669D37 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		7423C97F1DF1893900669D37 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTitleCell.swift; sourceTree = "<group>"; };
 		7459B93E1DFCBCB900572D51 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		74AF26721DF7549F006342A4 /* WorktimeEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeEditViewController.swift; sourceTree = "<group>"; };
 		74AF26741DF7574F006342A4 /* ReportsDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsDatePickerViewController.swift; sourceTree = "<group>"; };
 		74AF26761DF7576A006342A4 /* ExportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExportViewController.swift; sourceTree = "<group>"; };
-		74C48C6D1DF6035F004623DE /* JobTitleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JobTitleCellView.xib; path = ../JobTitleCellView.xib; sourceTree = "<group>"; };
+		74C48C6D1DF6035F004623DE /* JobTitleCellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobTitleCellView.xib; sourceTree = "<group>"; };
 		74C7F6781DF08F7E00D11CA0 /* Wrk.Trckr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wrk.Trckr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C7F67B1DF08F7E00D11CA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74C7F6821DF08F7E00D11CA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
