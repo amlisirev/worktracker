@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WorktimeCell" id="g4e-gv-Tjz" userLabel="WorktimeCell" customClass="WorktimeCell" customModule="Wrk_Trckr" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g4e-gv-Tjz" id="qw6-aB-jCe">
+                <frame key="frameInset" width="375" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Jobtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q9-g9-UAR">
+                        <frame key="frameInset" minX="140" minY="7" width="155" height="28"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s5c-UW-eMG">
+                        <frame key="frameInset" minY="8" width="132" height="27"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="Hours" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Bg-Bf-mHn">
+                        <frame key="frameInset" minX="303" minY="8" width="72" height="25"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6Q9-g9-UAR" firstAttribute="leading" secondItem="s5c-UW-eMG" secondAttribute="trailing" constant="8" id="2R5-M1-JiL"/>
+                    <constraint firstItem="6Q9-g9-UAR" firstAttribute="top" secondItem="qw6-aB-jCe" secondAttribute="top" constant="8" id="5GY-WJ-MK1"/>
+                    <constraint firstItem="s5c-UW-eMG" firstAttribute="leading" secondItem="qw6-aB-jCe" secondAttribute="leading" id="BH5-Do-lcK"/>
+                    <constraint firstItem="1Bg-Bf-mHn" firstAttribute="top" secondItem="qw6-aB-jCe" secondAttribute="top" constant="8" id="LA6-h8-Sa9"/>
+                    <constraint firstItem="1Bg-Bf-mHn" firstAttribute="leading" secondItem="6Q9-g9-UAR" secondAttribute="trailing" constant="8" id="LyD-RJ-dZU"/>
+                    <constraint firstAttribute="trailing" secondItem="1Bg-Bf-mHn" secondAttribute="trailing" id="VUf-xU-8Bt"/>
+                    <constraint firstItem="s5c-UW-eMG" firstAttribute="top" secondItem="qw6-aB-jCe" secondAttribute="top" constant="8" id="i25-jj-dvf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="date" destination="s5c-UW-eMG" id="9zD-VV-586"/>
+                <outlet property="hours" destination="1Bg-Bf-mHn" id="4q9-Mh-sBp"/>
+                <outlet property="jobtitle" destination="6Q9-g9-UAR" id="I6d-oc-Ply"/>
+            </connections>
+            <point key="canvasLocation" x="-141.5" y="-79"/>
+        </tableViewCell>
+    </objects>
+</document>
