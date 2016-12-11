@@ -43,7 +43,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Reports" id="hRe-d3-95K"/>
+                    <tabBarItem key="tabBarItem" title="Reports" image="reportsIcon" id="hRe-d3-95K"/>
                     <connections>
                         <outlet property="jobTableView" destination="Z0T-dQ-kbR" id="Kx3-Tf-q8L"/>
                     </connections>
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="jkb-Xe-CAB" userLabel="Settings"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="jkb-Xe-CAB" userLabel="Settings"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fur-Cd-i7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,7 +231,7 @@
                             <constraint firstItem="ISE-jg-qIz" firstAttribute="leading" secondItem="6qP-ZS-kFx" secondAttribute="leading" id="yjd-ZV-TMC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Wrk.trckr" id="0D6-Xz-dwR"/>
+                    <tabBarItem key="tabBarItem" title="Wrk.trckr" image="trackerIcon" id="0D6-Xz-dwR"/>
                     <connections>
                         <outlet property="jobTableView" destination="ISE-jg-qIz" id="06f-fI-MCd"/>
                         <segue destination="xmm-a0-LIa" kind="show" identifier="worktimeListForJob" id="h1r-ro-Iuv"/>
@@ -380,9 +380,14 @@
             <point key="canvasLocation" x="-1362" y="-173"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="reportsIcon" width="48" height="48"/>
+        <image name="settingsIcon" width="48" height="48"/>
+        <image name="trackerIcon" width="48" height="48"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zyv-Zc-UED"/>
-        <segue reference="fJl-Oh-4W8"/>
         <segue reference="h1r-ro-Iuv"/>
+        <segue reference="fJl-Oh-4W8"/>
+        <segue reference="ayc-8o-SXE"/>
     </inferredMetricsTieBreakers>
 </document>

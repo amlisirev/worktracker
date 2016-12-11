@@ -76,7 +76,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.jobcount.text = (job.worktimes?.count)?.description
         if timer.isValid && (timerForWork?.job == job) {
             cell.jobtimer.isHidden = false
-            cell.jobtimer.text = setCellTimeLabel(start: timerForWork.start! as Date)
+            cell.setTimerLabel(start: timerForWork.start! as Date)
         } else {
             cell.jobtimer.isHidden = true
         }
@@ -218,15 +218,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
         
     }
-    
-    func setCellTimeLabel(start: Date) -> String {
-        let elapsed:TimeInterval = Date().timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
-        let elapsedInt = NSInteger(elapsed)
-        let hours = elapsedInt/3600
-        let minutes = (elapsedInt/60)%60
-        let seconds = elapsedInt % 60
-        return String(format: "%.02d: %0.2d: %0.2d", hours, minutes, seconds)
-    }
+
     func updateTimer() {
         if (timerForWork != nil) {
             reloadTable()
