@@ -52,10 +52,10 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = worktimeTableView.dequeueReusableCell(withIdentifier: "WorktimeCell", for: indexPath) as! WorktimeCell
         let workrow = work[indexPath.row]
-        cell.date.text = stringFromDate(workrow.start as! Date)
+        cell.setDatestringFromDate(workrow.start as! Date)
         cell.jobtitle.text = workrow.job?.name
         if (workrow.end != nil) {
-            cell.hours.text = hoursFromDates(workrow.start as! Date, end: workrow.end as! Date)
+            cell.setHoursFromDates(workrow.start as! Date, end: workrow.end as! Date)
         } else {
             cell.hours.text = "ongoing"
         }
@@ -64,25 +64,6 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     }
     
     
-    // TimeFormatters!
-    
-    func hoursFromDates(_ start: Date, end: Date) -> String {
-        let elapsed = end.timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
-        let elapsedInt = NSInteger(elapsed)
-        let hours = elapsedInt / 3600
-        let minutes = (elapsedInt/60)%60
-        return String(format: "%0.2d hrs %0.2d min", hours, minutes)
-    }
-    
-    func stringFromDate(_ date: Date) -> String{
-        let dateformat = DateFormatter()
-        dateformat.locale = Locale.current
-        dateformat.dateStyle = .short
-        dateformat.timeStyle = .short
-        
-        return dateformat.string(from: date)
-
-    }
     /*
     // MARK: - Navigation
 

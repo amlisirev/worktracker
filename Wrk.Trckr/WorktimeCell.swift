@@ -23,5 +23,22 @@ class WorktimeCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func setHoursFromDates(_ start: Date, end: Date) {
+        let elapsed = end.timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
+        let elapsedInt = NSInteger(elapsed)
+        let sethours = elapsedInt / 3600
+        let setminutes = (elapsedInt/60)%60
+        hours.text = String(format: "%0.2d hrs %0.2d min", sethours, setminutes)
+    }
+    
+    func setDatestringFromDate(_ setdate: Date) {
+        let dateformat = DateFormatter()
+        dateformat.locale = Locale.current
+        dateformat.dateStyle = .short
+        dateformat.timeStyle = .short
+        
+        date.text = dateformat.string(from: setdate)
+    }
+    
 }

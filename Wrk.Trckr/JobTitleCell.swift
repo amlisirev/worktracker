@@ -23,5 +23,14 @@ class JobTitleCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func setTimerLabel(start: Date) {
+        let elapsed:TimeInterval = Date().timeIntervalSinceReferenceDate - start.timeIntervalSinceReferenceDate
+        let elapsedInt = NSInteger(elapsed)
+        let hours = elapsedInt/3600
+        let minutes = (elapsedInt/60)%60
+        let seconds = elapsedInt % 60
+        jobtimer.text = String(format: "%.02d: %0.2d: %0.2d", hours, minutes, seconds)
+    }
 
 }

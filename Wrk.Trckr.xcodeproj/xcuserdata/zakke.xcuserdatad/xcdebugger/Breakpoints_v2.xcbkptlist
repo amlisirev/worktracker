@@ -105,11 +105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wrk.Trckr/TrackerViewController.swift"
-            timestampString = "503089842.482001"
+            timestampString = "503166559.263322"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "239"
-            endingLineNumber = "239"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "timerDidChange()"
             landmarkType = "7">
          </BreakpointContent>
