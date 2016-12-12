@@ -178,25 +178,6 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
-    func openJobs() -> [Worktime] {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let sortByStart = NSSortDescriptor(key: "start", ascending: false)
-        let searchByOngoing = NSPredicate(format: "end == nil")
-        let requestForBatch: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        
-        requestForBatch.predicate = searchByOngoing
-        requestForBatch.sortDescriptors = [sortByStart]
-        var results: [Worktime] = []
-        
-        do {
-            results = try context.fetch(requestForBatch)
-        } catch {
-            print("fetch failed")
-        }
-        return results
-    }
-    
     // NSTIMER SETUP!!!
     //
     
@@ -214,7 +195,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func timerDidChange() {
-        let openjobs = openJobs()
+        let openjobs = Worktime.openWorktimes(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
         if openjobs.isEmpty {
             timer.invalidate()
             timerForWork = nil
