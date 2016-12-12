@@ -14,7 +14,6 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var jobTableView: UITableView!
     var jobs: [Jobtitle] = []
     var timer: Timer = Timer()
-    weak var timerForJob: Jobtitle!
     weak var timerForWork: Worktime!
     
     @IBAction func addJob(_ sender: AnyObject) {
@@ -73,7 +72,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = jobTableView.dequeueReusableCell(withIdentifier: "JobCell", for: indexPath) as! JobTitleCell
         
         cell.jobtitle.text = job.name
-        cell.jobcount.text = (job.worktimes?.count)?.description
+        cell.jobcount.text = (job.finishedWorktimes().count).description
         if timer.isValid && (timerForWork?.job == job) {
             cell.jobtimer.isHidden = false
             cell.setTimerLabel(start: timerForWork.start! as Date)
@@ -126,25 +125,15 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
     func stampCard(job: Jobtitle) {
         // stamps your card. if there are worktimes with no enddate, stamp enddates! if enddates exist, start new worktime and stamp start time.
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let sortByStart = NSSortDescriptor(key: "start", ascending: false)
-        let searchByJob = NSPredicate(format: "(job == %@) AND (end == nil)", job)
-        let requestForJob: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        requestForJob.predicate = searchByJob
-        requestForJob.sortDescriptors = [sortByStart]
-        requestForJob.fetchLimit = 1
-        
         let work:Worktime
         let stampdate = NSDate()
-        do {
-            let openjob = try context.fetch(requestForJob)
-            
+            let openjob = job.openWorktimes()
             if openjob.first != nil {
                 work = openjob.first!
                 work.end = stampdate
                 print("STAMPED OUT", job.name)
             } else {
-                let openjobs = openJobs()
+                let openjobs = Worktime.openWorktimes(context: context)
                 if !openjobs.isEmpty {
                     for item in openjobs {
                         item.end = stampdate
@@ -156,9 +145,6 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
                 work.start = stampdate
                 print("STAMPED IN")
             }
-            } catch {
-            print("failed to fetch")
-        }
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         getData()
         timerDidChange()
@@ -176,10 +162,10 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
     }
 
     func getData() {
-        let managedContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
         do {
-            jobs = try managedContext.fetch(Jobtitle.fetchRequest())
+            jobs = try context.fetch(Jobtitle.fetchRequest())
         } catch {
             print("Fetching jobtitles failed")
         }
@@ -190,25 +176,6 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         let job = Jobtitle(context: managedContext)
         job.name = name
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-    
-    func openJobs() -> [Worktime] {
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
-        let sortByStart = NSSortDescriptor(key: "start", ascending: false)
-        let searchByOngoing = NSPredicate(format: "end == nil")
-        let requestForBatch: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        
-        requestForBatch.predicate = searchByOngoing
-        requestForBatch.sortDescriptors = [sortByStart]
-        var results: [Worktime] = []
-        
-        do {
-            results = try context.fetch(requestForBatch)
-        } catch {
-            print("fetch failed")
-        }
-        return results
     }
     
     // NSTIMER SETUP!!!
@@ -228,7 +195,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func timerDidChange() {
-        let openjobs = openJobs()
+        let openjobs = Worktime.openWorktimes(context: (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
         if openjobs.isEmpty {
             timer.invalidate()
             timerForWork = nil

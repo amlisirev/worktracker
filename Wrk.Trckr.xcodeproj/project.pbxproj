@@ -26,6 +26,10 @@
 		74C7F6881DF08F7E00D11CA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C7F6861DF08F7E00D11CA0 /* LaunchScreen.storyboard */; };
 		74C7F6931DF08F7E00D11CA0 /* Wrk_TrckrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7F6921DF08F7E00D11CA0 /* Wrk_TrckrTests.swift */; };
 		74C7F69E1DF08F7E00D11CA0 /* Wrk_TrckrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C7F69D1DF08F7E00D11CA0 /* Wrk_TrckrUITests.swift */; };
+		74F6E8911DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F6E88F1DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift */; };
+		74F6E8921DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F6E8901DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift */; };
+		74F6E8951DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F6E8931DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift */; };
+		74F6E8961DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F6E8941DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +75,10 @@
 		74C7F6991DF08F7E00D11CA0 /* Wrk.TrckrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Wrk.TrckrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74C7F69D1DF08F7E00D11CA0 /* Wrk_TrckrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrk_TrckrUITests.swift; sourceTree = "<group>"; };
 		74C7F69F1DF08F7E00D11CA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74F6E88F1DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Jobtitle+CoreDataClass.swift"; sourceTree = "<group>"; };
+		74F6E8901DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Jobtitle+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		74F6E8931DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Worktime+CoreDataClass.swift"; sourceTree = "<group>"; };
+		74F6E8941DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Worktime+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		744B89D61DFEDDA1007A81B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74F6E8931DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift */,
+				74F6E8941DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift */,
+				74F6E88F1DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift */,
+				74F6E8901DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		74C7F66F1DF08F7E00D11CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +150,7 @@
 		74C7F67A1DF08F7E00D11CA0 /* Wrk.Trckr */ = {
 			isa = PBXGroup;
 			children = (
+				744B89D61DFEDDA1007A81B6 /* Model */,
 				74C7F67B1DF08F7E00D11CA0 /* AppDelegate.swift */,
 				7423C97D1DF1892500669D37 /* ReportsViewController.swift */,
 				7423C97F1DF1893900669D37 /* TrackerViewController.swift */,
@@ -311,12 +331,16 @@
 				7489717C1DFC6CCA0062BADF /* WorktimeCell.swift in Sources */,
 				7459B93F1DFCBCB900572D51 /* SettingsViewController.swift in Sources */,
 				74AF26731DF7549F006342A4 /* WorktimeEditViewController.swift in Sources */,
+				74F6E8911DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift in Sources */,
 				74AF26771DF7576A006342A4 /* ExportViewController.swift in Sources */,
 				74AF26751DF7574F006342A4 /* ReportsDatePickerViewController.swift in Sources */,
 				74C7F67C1DF08F7E00D11CA0 /* AppDelegate.swift in Sources */,
 				7423C9801DF1893900669D37 /* TrackerViewController.swift in Sources */,
 				7456BDCA1DF4AA430086C3BD /* JobTitleCell.swift in Sources */,
+				74F6E8961DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift in Sources */,
 				7423C97E1DF1892500669D37 /* ReportsViewController.swift in Sources */,
+				74F6E8951DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift in Sources */,
+				74F6E8921DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift in Sources */,
 				7411A51A1DF0CC170000DDFD /* wrkwrk.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
