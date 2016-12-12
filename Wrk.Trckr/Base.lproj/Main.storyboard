@@ -171,9 +171,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-L5-MvJ" userLabel="ChosenWorktimesList">
-                                <frame key="frameInset" minY="44" width="375" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ddE-L5-MvJ" userLabel="ChosenWorktimesList">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="3ew-bc-GGd" id="tiP-6M-AfX"/>
@@ -181,6 +179,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ddE-L5-MvJ" secondAttribute="trailing" id="2e0-Gu-egH"/>
+                            <constraint firstItem="ddE-L5-MvJ" firstAttribute="top" secondItem="IXk-Ty-Oay" secondAttribute="bottom" constant="24" id="BT3-Zz-f2s"/>
+                            <constraint firstItem="r5m-SK-HBy" firstAttribute="top" secondItem="ddE-L5-MvJ" secondAttribute="bottom" id="LlO-bJ-0Pf"/>
+                            <constraint firstItem="ddE-L5-MvJ" firstAttribute="leading" secondItem="wX4-1b-SQg" secondAttribute="leading" id="kAt-zd-eTG"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="worktimeTableView" destination="ddE-L5-MvJ" id="PMT-ia-tSp"/>
@@ -271,9 +275,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-Nq-XO0">
-                                <frame key="frameInset" minY="44" width="375" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-Nq-XO0">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xmm-a0-LIa" id="aIJ-bI-4oA"/>
@@ -281,6 +283,12 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3DL-jE-5kJ" firstAttribute="top" secondItem="Atl-Nq-XO0" secondAttribute="bottom" id="8pi-Tc-Pud"/>
+                            <constraint firstItem="Atl-Nq-XO0" firstAttribute="leading" secondItem="GKN-yG-TBa" secondAttribute="leading" id="bk8-ii-cWJ"/>
+                            <constraint firstAttribute="trailing" secondItem="Atl-Nq-XO0" secondAttribute="trailing" id="eTU-qy-lqG"/>
+                            <constraint firstItem="Atl-Nq-XO0" firstAttribute="top" secondItem="vXg-br-ahV" secondAttribute="bottom" constant="24" id="lnb-pH-OC3"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="worktimeTableView" destination="Atl-Nq-XO0" id="swS-C5-gW0"/>
@@ -381,13 +389,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="reportsIcon" width="48" height="48"/>
-        <image name="settingsIcon" width="48" height="48"/>
-        <image name="trackerIcon" width="48" height="48"/>
+        <image name="reportsIcon" width="24" height="24"/>
+        <image name="settingsIcon" width="24" height="24"/>
+        <image name="trackerIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h1r-ro-Iuv"/>
         <segue reference="fJl-Oh-4W8"/>
-        <segue reference="ayc-8o-SXE"/>
+        <segue reference="h1r-ro-Iuv"/>
+        <segue reference="Zyv-Zc-UED"/>
     </inferredMetricsTieBreakers>
 </document>
