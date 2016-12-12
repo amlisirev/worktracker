@@ -55,7 +55,7 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         cell.setDatestringFromDate(workrow.start as! Date)
         cell.jobtitle.text = workrow.job?.name
         if (workrow.end != nil) {
-            cell.setHoursFromDates(workrow.start as! Date, end: workrow.end as! Date)
+            cell.setHoursFromInterval(workrow.duration())
         } else {
             cell.hours.text = "ongoing"
         }

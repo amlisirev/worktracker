@@ -28,4 +28,12 @@ public class Worktime: NSManagedObject {
         }
         return results
     }
+    
+    func duration() -> TimeInterval {
+        var elapsed = 0.00
+        if end != nil {
+            elapsed = end!.timeIntervalSince(start! as Date)
+        }
+        return elapsed
+    }
 }
