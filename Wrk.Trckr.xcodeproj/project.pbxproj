@@ -115,6 +115,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		744B89D61DFEDDA1007A81B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74F6E8931DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift */,
+				74F6E8941DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift */,
+				74F6E88F1DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift */,
+				74F6E8901DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		74C7F66F1DF08F7E00D11CA0 = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +150,7 @@
 		74C7F67A1DF08F7E00D11CA0 /* Wrk.Trckr */ = {
 			isa = PBXGroup;
 			children = (
-				74F6E8931DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift */,
-				74F6E8941DFE0FF800EC5D2E /* Worktime+CoreDataProperties.swift */,
-				74F6E88F1DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift */,
-				74F6E8901DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift */,
+				744B89D61DFEDDA1007A81B6 /* Model */,
 				74C7F67B1DF08F7E00D11CA0 /* AppDelegate.swift */,
 				7423C97D1DF1892500669D37 /* ReportsViewController.swift */,
 				7423C97F1DF1893900669D37 /* TrackerViewController.swift */,

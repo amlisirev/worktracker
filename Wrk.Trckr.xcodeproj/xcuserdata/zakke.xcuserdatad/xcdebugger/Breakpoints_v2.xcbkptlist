@@ -89,11 +89,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wrk.Trckr/TrackerViewController.swift"
-            timestampString = "503080543.04233"
+            timestampString = "503243454.423415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "tableView(_:didDeselectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -105,11 +105,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wrk.Trckr/TrackerViewController.swift"
-            timestampString = "503166559.263322"
+            timestampString = "503245849.47427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
+            startingLineNumber = "217"
+            endingLineNumber = "217"
             landmarkName = "timerDidChange()"
             landmarkType = "7">
          </BreakpointContent>

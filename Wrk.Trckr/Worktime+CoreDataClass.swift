@@ -12,4 +12,20 @@ import CoreData
 @objc(Worktime)
 public class Worktime: NSManagedObject {
 
+    class func openWorktimes(context: NSManagedObjectContext) -> [Worktime] {
+        let sortByStart = NSSortDescriptor(key: "start", ascending: false)
+        let searchByOngoing = NSPredicate(format: "end == nil")
+        let requestForBatch: NSFetchRequest<Worktime> = Worktime.fetchRequest()
+        
+        requestForBatch.predicate = searchByOngoing
+        requestForBatch.sortDescriptors = [sortByStart]
+        var results: [Worktime] = []
+        
+        do {
+            results = try context.fetch(requestForBatch)
+        } catch {
+            print("fetch failed")
+        }
+        return results
+    }
 }
