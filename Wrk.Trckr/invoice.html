@@ -1,0 +1,164 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vantaa työnantaja invoice</title>
+    
+    <style>
+    .invoice-box{
+        max-width:800px;
+        margin:auto;
+        padding:30px;
+        border:1px solid #eee;
+        box-shadow:0 0 10px rgba(0, 0, 0, .15);
+        font-size:16px;
+        line-height:24px;
+        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+        color:#555;
+    }
+    
+    .invoice-box table{
+        width:100%;
+        line-height:inherit;
+        text-align:left;
+    }
+    
+    .invoice-box table td{
+        padding:5px;
+        vertical-align:top;
+    }
+    
+    .invoice-box table tr td:nth-child(2){
+        text-align:right;
+    }
+    
+    .invoice-box table tr.top table td{
+        padding-bottom:20px;
+    }
+    
+    .invoice-box table tr.top table td.title{
+        font-size:45px;
+        line-height:45px;
+        color:#333;
+    }
+    
+    .invoice-box table tr.information table td{
+        padding-bottom:40px;
+    }
+    
+    .invoice-box table tr.heading td{
+        background:#eee;
+        border-bottom:1px solid #ddd;
+        font-weight:bold;
+    }
+    
+    .invoice-box table tr.details td{
+        padding-bottom:20px;
+    }
+    
+    .invoice-box table tr.item td{
+        border-bottom:1px solid #eee;
+    }
+    
+    .invoice-box table tr.item.last td{
+        border-bottom:none;
+    }
+    
+    .invoice-box table tr.total td:nth-child(2){
+        border-top:2px solid #eee;
+        font-weight:bold;
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .invoice-box table tr.top table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+        
+        .invoice-box table tr.information table td{
+            width:100%;
+            display:block;
+            text-align:center;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="invoice-box">
+	
+	<table cellpadding="2">
+		<tr class="heading">
+			<td> School name</td>
+			<td>Class</td>
+		</tr>
+		<tr>
+			<td>testikoulu</td>
+			<td>tyhjä</td>
+		</tr>
+		<tr class="heading">
+			<td>Teacher name</td>
+		</tr>
+		<tr>
+			<td>Testinimi jeejee</td>
+		</tr>
+	</table>
+	
+	
+        <table cellpadding="2">
+	        <tr class="heading">
+                <td>Date</td>
+                <td>Time</td>
+				<td>Hours</td>
+				<td>Job description</td>
+				<td>Signature</td>
+            </tr>
+            <tr class="item">
+                <td>1.1.2017</td>
+                <td>13:15-13:30</td>
+				<td>15min</td>
+				<td>tukiopetus</td>
+				<td>signatuuri</td>
+            </tr>
+            
+            <tr class="item last">
+                <td>1.1.2017</td>
+                <td>10:00-11:30</td>
+				<td>1h 30min</td>
+				<td>tukiopetus</td>
+				<td>signatuuri</td>
+            </tr>
+            
+            <tr class="total">
+                <td></td>
+                <td></td>
+				<td>1h 45min</td>
+                <td></td>
+				<td></td>
+            </tr>
+        </table>
+
+		<p>Hyväksyminen:</p>
+		<table cellpadding="2">
+			<tr class="heading">
+				<td>päiväys ja rehtorin allekirjoitus</td>
+				<td>kustannuspaikka</td>
+			</tr>
+			<tr>
+				<td> sigsigsigs</td>
+				<td>sigsigsigs</td>
+			</tr>
+			
+			<tr class="heading">
+				<td>Päiväys ja hyväksyjän allekirjoitus</td>
+			</tr>
+			
+			<tr>
+				<td>tesgsgsepgs</td>
+			</tr>
+		</table>
+
+    </div>
+</body>
+</html>

@@ -11,6 +11,7 @@
 		7411A51A1DF0CC170000DDFD /* wrkwrk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7411A5181DF0CC170000DDFD /* wrkwrk.xcdatamodeld */; };
 		7423C97E1DF1892500669D37 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423C97D1DF1892500669D37 /* ReportsViewController.swift */; };
 		7423C9801DF1893900669D37 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423C97F1DF1893900669D37 /* TrackerViewController.swift */; };
+		742E67C11DFF6AFE00B992A5 /* invoice.html in Resources */ = {isa = PBXBuildFile; fileRef = 742E67C01DFF6AFE00B992A5 /* invoice.html */; };
 		7456BDCA1DF4AA430086C3BD /* JobTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */; };
 		7459B93F1DFCBCB900572D51 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459B93E1DFCBCB900572D51 /* SettingsViewController.swift */; };
 		7489717C1DFC6CCA0062BADF /* WorktimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */; };
@@ -54,6 +55,7 @@
 		7411A5191DF0CC170000DDFD /* wrkwrk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wrkwrk.xcdatamodel; sourceTree = "<group>"; };
 		7423C97D1DF1892500669D37 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		7423C97F1DF1893900669D37 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		742E67C01DFF6AFE00B992A5 /* invoice.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = invoice.html; sourceTree = "<group>"; };
 		7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTitleCell.swift; sourceTree = "<group>"; };
 		7459B93E1DFCBCB900572D51 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeCell.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		742E67BF1DFF6AD200B992A5 /* ExportTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				742E67C01DFF6AFE00B992A5 /* invoice.html */,
+			);
+			name = ExportTemplates;
+			sourceTree = "<group>";
+		};
 		744B89D61DFEDDA1007A81B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 				74AF26701DF75465006342A4 /* WorktimeListViewController.swift */,
 				74C48C6D1DF6035F004623DE /* JobTitleCellView.xib */,
 				7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */,
+				742E67BF1DFF6AD200B992A5 /* ExportTemplates */,
 				7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */,
 				7489717D1DFC6CE30062BADF /* WorktimeCell.xib */,
 				74C7F6841DF08F7E00D11CA0 /* Assets.xcassets */,
@@ -298,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742E67C11DFF6AFE00B992A5 /* invoice.html in Resources */,
 				74C7F6881DF08F7E00D11CA0 /* LaunchScreen.storyboard in Resources */,
 				74C7F6851DF08F7E00D11CA0 /* Assets.xcassets in Resources */,
 				74C48C6E1DF6035F004623DE /* JobTitleCellView.xib in Resources */,
