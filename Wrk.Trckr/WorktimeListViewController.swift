@@ -17,22 +17,11 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        worktimeTableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        worktimeTableView.register(UINib(nibName: "WorktimeCell", bundle: nil), forCellReuseIdentifier: "WorktimeCell")
         // title = "Hours for " + job.name as! String
         // WHY WONT THIS WORK!
         // worktimes = job.worktimes as! [Worktime]
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let sortBy = NSSortDescriptor(key: "start", ascending: false)
-        let searchBy = NSPredicate(format: "job == %@", job)
-        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        request.predicate = searchBy
-        request.sortDescriptors = [sortBy]
-        do {
-            worktimes = try context.fetch(request)
-        } catch {
-            print("fetch failed")
-        }
-
+        worktimes = job.finishedWorktimes()
         // Do any additional setup after loading the view.
     }
 
@@ -46,13 +35,11 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = worktimeTableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let starttime = worktimes[indexPath.row].start as! Date
-        let dateformat = DateFormatter()
-        dateformat.locale = Locale.current
-        dateformat.dateStyle = .long
-        dateformat.timeStyle = .medium
-        cell.textLabel?.text = dateformat.string(from: starttime)
+        let cell = worktimeTableView.dequeueReusableCell(withIdentifier: "WorktimeCell", for: indexPath) as! WorktimeCell
+        let workrow = worktimes[indexPath.row]
+        cell.jobtitle.isHidden = true
+        cell.setDatestringFromDate(workrow.start! as Date)
+        cell.setHoursFromInterval(workrow.duration())
         return cell
     }
     /*
