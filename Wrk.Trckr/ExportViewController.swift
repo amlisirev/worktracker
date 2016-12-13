@@ -81,6 +81,11 @@ class ExportViewController: UIViewController, UITableViewDataSource {
             controller.savedEnd = endDate
             print("triggered back segue in export!")
         }
+        
+        if segue.identifier == "exportPreview" {
+            let controller = segue.destination as! PreviewViewController
+            controller.worktimes = work
+        }
     }
 
 }

@@ -166,6 +166,7 @@
                                         <barButtonItem key="rightBarButtonItem" title="Export" id="03t-zj-Wcg">
                                             <connections>
                                                 <action selector="Export:" destination="3ew-bc-GGd" id="HQ9-ed-4Y1"/>
+                                                <segue destination="zZX-TT-9Ok" kind="show" identifier="exportPreview" id="DAK-ab-U5O"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -193,6 +194,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7il-sT-n02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1352.8" y="275.71214392803603"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="0Bn-Ug-tVz">
+            <objects>
+                <viewController id="zZX-TT-9Ok" customClass="PreviewViewController" customModule="Wrk_Trckr" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bCC-WQ-AXy"/>
+                        <viewControllerLayoutGuide type="bottom" id="dYO-16-7tJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Us-KT-71C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHr-HM-CZ7">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="619"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webPreview" destination="vHr-HM-CZ7" id="3Bc-WT-NOb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciE-Ht-bp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2293.5999999999999" y="268.51574212893553"/>
         </scene>
         <!--wrktrckr-->
         <scene sceneID="sJ5-Rt-wB9">
