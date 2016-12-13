@@ -21,15 +21,12 @@
         width:100%;
         line-height:inherit;
         text-align:left;
+        margin-bottom:40px;
     }
     
     .invoice-box table td{
         padding:5px;
         vertical-align:top;
-    }
-    
-    .invoice-box table tr td:nth-child(2){
-        text-align:right;
     }
     
     .invoice-box table tr.top table td{
@@ -42,8 +39,13 @@
         color:#333;
     }
     
-    .invoice-box table tr.information table td{
-        padding-bottom:40px;
+    .invoice-box table tr.infoheading td{
+        padding-bottom:0px;
+        text-align:left;
+    }
+    
+    .invoice-box table tr.infofield td {
+        border-bottom:1px solid #ddd;
     }
     
     .invoice-box table tr.heading td{
@@ -52,19 +54,11 @@
         font-weight:bold;
     }
     
-    .invoice-box table tr.details td{
-        padding-bottom:20px;
-    }
-    
     .invoice-box table tr.item td{
-        border-bottom:1px solid #eee;
+        border:1px solid #eee;
     }
     
-    .invoice-box table tr.item.last td{
-        border-bottom:none;
-    }
-    
-    .invoice-box table tr.total td:nth-child(2){
+    .invoice-box table tr.total td:nth-child(3){
         border-top:2px solid #eee;
         font-weight:bold;
     }
@@ -88,25 +82,25 @@
 <body>
     <div class="invoice-box">
 	
-	<table cellpadding="2">
-		<tr class="heading">
+	<table>
+		<tr class="infoheading">
 			<td> School name</td>
 			<td>Class</td>
 		</tr>
-		<tr>
-			<td>testikoulu</td>
-			<td>tyhjä</td>
+		<tr class="infofield">
+            <td>#SCHOOL#</td>
+            <td>#CLASS#</td>
 		</tr>
-		<tr class="heading">
+		<tr class="infoheading">
 			<td>Teacher name</td>
 		</tr>
-		<tr>
-			<td>Testinimi jeejee</td>
+		<tr class="infofield">
+            <td>#WORKER_NAME#</td>
 		</tr>
 	</table>
 	
 	
-        <table cellpadding="2">
+        <table style="border-collapse:collapse;">
 	        <tr class="heading">
                 <td>Date</td>
                 <td>Time</td>
@@ -114,15 +108,8 @@
 				<td>Job description</td>
 				<td>Signature</td>
             </tr>
+            #ROWS#
             <tr class="item">
-                <td>1.1.2017</td>
-                <td>13:15-13:30</td>
-				<td>15min</td>
-				<td>tukiopetus</td>
-				<td>signatuuri</td>
-            </tr>
-            
-            <tr class="item last">
                 <td>1.1.2017</td>
                 <td>10:00-11:30</td>
 				<td>1h 30min</td>
@@ -133,29 +120,29 @@
             <tr class="total">
                 <td></td>
                 <td></td>
-				<td>1h 45min</td>
+                <td>#TOTALHOURS#</td>
                 <td></td>
 				<td></td>
             </tr>
         </table>
 
-		<p>Hyväksyminen:</p>
-		<table cellpadding="2">
-			<tr class="heading">
-				<td>päiväys ja rehtorin allekirjoitus</td>
-				<td>kustannuspaikka</td>
+
+		<table>
+			<tr class="infoheading">
+				<td>Päiväys ja Rehtorin allekirjoitus</td>
+				<td>Kustannuspaikka</td>
 			</tr>
-			<tr>
-				<td> sigsigsigs</td>
-				<td>sigsigsigs</td>
+			<tr class="infofield">
+                <td> #EMPTY_SIG#</td>
+                <td>#EMPTY_SIG#</td>
 			</tr>
 			
-			<tr class="heading">
+			<tr class="infoheading">
 				<td>Päiväys ja hyväksyjän allekirjoitus</td>
 			</tr>
 			
-			<tr>
-				<td>tesgsgsepgs</td>
+			<tr class="infofield">
+                <td>#EMPTY_SIG#</td>
 			</tr>
 		</table>
 
