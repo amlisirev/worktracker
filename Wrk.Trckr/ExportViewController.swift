@@ -40,18 +40,9 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         super.viewDidLoad()
         print("you got this far, export!!!", jobs.count)
         worktimeTableView.register(UINib(nibName: "WorktimeCell", bundle: nil), forCellReuseIdentifier: "WorktimeCell")
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let sortBy = NSSortDescriptor(key: "start", ascending: false)
-        let searchBy = NSPredicate(format: "(job IN %@)", jobs)
-        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        request.sortDescriptors = [sortBy]
-        request.predicate = searchBy
-        do {
-            work = try context.fetch(request)
-        } catch {
-            print("fetching worktimes failed")
-        }
+        getData()
         worktimeTableView.reloadData()
+        print(startDate.description + " jeejee DATE " + endDate.description)
 
         // Do any additional setup after loading the view.
     }
@@ -88,6 +79,24 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         composer.renderHTMLStringPagesToPDF(reportHTML, filename: file)
     }
     
+    
+    // COREDATA
+    func getData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let sortBy = NSSortDescriptor(key: "start", ascending: false)
+        let searchByJobs = NSPredicate(format: "(job IN %@)", jobs)
+        let searchByStart = NSPredicate(format: "start >= %@", startDate)
+        let searchByEnd = NSPredicate(format: "end <= %@", endDate)
+        let compoundSearch = NSCompoundPredicate(andPredicateWithSubpredicates: [searchByJobs,searchByStart, searchByEnd])
+        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
+        request.sortDescriptors = [sortBy]
+        request.predicate = compoundSearch
+        do {
+            work = try context.fetch(request)
+        } catch {
+            print("fetching worktimes failed")
+        }
+    }
     /*
     // MARK: - Navigation
 

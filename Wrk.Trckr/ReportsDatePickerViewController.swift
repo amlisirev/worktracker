@@ -22,8 +22,8 @@ class ReportsDatePickerViewController: UIViewController {
         //
         //  goddamn.
         if (savedStart != nil) && (savedEnd != nil) {
-            self.endDate.setDate(savedEnd! as Date, animated: false)
-            self.startDate.setDate(savedStart! as Date, animated: false)
+            self.endDate.setDate(savedEnd! as Date, animated: true)
+            self.startDate.setDate(savedStart! as Date, animated: true)
             print("segue did set dates")
         }
         
@@ -49,10 +49,10 @@ class ReportsDatePickerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "exportWorktimes" {
             let controller = segue.destination as! ExportViewController
-            let start = startDate.date as NSDate
-            let end = endDate.date as NSDate
-            controller.startDate = start
-            controller.endDate = end
+            let startdate = startDate.date as NSDate
+            let enddate = endDate.date as NSDate
+            controller.startDate = startdate
+            controller.endDate = enddate
             controller.jobs = jobs
             print("this many stuff at datepicker segue", jobs.count, startDate.date, endDate.date)
         }
