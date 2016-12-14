@@ -30,7 +30,7 @@ class PreviewViewController: UIViewController {
     
     func createReportAsHTML() {
         reportsComposer = ReportsComposer()
-        let reportHTML = reportsComposer.renderHourlist(school: "lumo", schoolclass: " ", teachername: "Sakari", worktimes: worktimes)
+        let reportHTML = reportsComposer.renderHourlist(school: "lumo", schoolclass: " ", teachername: "Sakari", worktimes: worktimes).first
         webPreview.loadHTMLString(reportHTML!, baseURL: URL(string: reportsComposer.pathToHourlistTemplate!))
         HTMLContent = reportHTML
     }

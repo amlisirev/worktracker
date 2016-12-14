@@ -12,13 +12,39 @@ class ReportsComposer: NSObject {
 
     let pathToHourlistTemplate = Bundle.main.path(forResource: "hourlist", ofType: "html")
     let pathToRowitemTemplate = Bundle.main.path(forResource: "row_item", ofType: "html")
-    var pdfFilename: String!
+    var pageCount: NSInteger!
+    var itemsPerPage: NSInteger!
     
     override init() {
         super.init()
+        pageCount = 0
+        itemsPerPage = 20
     }
     
-    func renderHourlist(school: String, schoolclass: String, teachername: String, worktimes: [Worktime]) -> String! {
+    init(itemsPerPage: NSInteger!) {
+        super.init()
+        pageCount = 0
+        self.itemsPerPage = itemsPerPage
+    }
+    
+    func renderHourlist(school: String, schoolclass: String, teachername: String, worktimes: [Worktime]) -> [String] {
+        let pages: [[Worktime]] = stride(from: 0, to: worktimes.count, by: itemsPerPage).map {
+            let end = worktimes.endIndex
+            let pageEnd = worktimes.index($0, offsetBy: itemsPerPage, limitedBy: end) ?? end
+            return Array(worktimes[$0..<pageEnd])
+        }
+        
+        var stringPages: [String] = []
+        for page in pages {
+            stringPages.append(renderHourlistPage(school: school, schoolclass: schoolclass, teachername: teachername, worktimes: page))
+        }
+        pageCount = stringPages.count
+        print("pages after render", stringPages.count)
+        return stringPages
+        
+    }
+    
+    func renderHourlistPage(school: String, schoolclass: String, teachername: String, worktimes: [Worktime]) -> String! {
         do {
             var generatedHTML = try String(contentsOfFile: pathToHourlistTemplate!, encoding: String.Encoding.utf8)
             var totalDur: TimeInterval = 0.00
@@ -74,22 +100,26 @@ class ReportsComposer: NSObject {
         return dateformat.string(from: setdate)
     }
     
-    func renderHTMLtoPDF(_ HTMLContent: String, filename: String) {
+    func renderHTMLStringPagesToPDF(_ HTMLContent: [String], filename: String) {
         let pageRenderer = A4PageRenderer()
-        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
-        pageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+        for (index, page) in HTMLContent.enumerated() {
+            let printFormatter = UIMarkupTextPrintFormatter(markupText: page)
+            pageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: index)
+        }
+        print("pages after pagerenderer loop", pageRenderer.numberOfPages)
         
         let pdfData = NSMutableData()
         UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
-        UIGraphicsBeginPDFPage()
-        pageRenderer.drawPage(at: 0, in: UIGraphicsGetPDFContextBounds())
+        for index in 0..<pageRenderer.numberOfPages {
+            UIGraphicsBeginPDFPage()
+            pageRenderer.drawPage(at: index, in: UIGraphicsGetPDFContextBounds())
+        }
         UIGraphicsEndPDFContext()
         
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let fileURL = URL(fileURLWithPath: (filename + ".pdf"), isDirectory: false, relativeTo: documentsURL.first)
         pdfData.write(to: fileURL, atomically: true)
         print("saved " + fileURL.description)
-
     }
     
 }
