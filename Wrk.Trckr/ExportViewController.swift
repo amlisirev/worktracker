@@ -18,6 +18,22 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     var work: [Worktime] = []
     
     @IBAction func Export(_ sender: AnyObject) {
+        let filenameAlert = UIAlertController(title: "Export as PDF", message: "choose filename", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action: UIAlertAction) -> Void in }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+           guard let textField = filenameAlert.textFields?.first,
+            let filename = textField.text else {
+                return
+            }
+        self.exportPDF(filename)
+        }
+        
+        filenameAlert.addTextField { (textField: UITextField) -> Void in}
+        filenameAlert.addAction(cancelAction)
+        filenameAlert.addAction(saveAction)
+        present(filenameAlert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -63,6 +79,14 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    // EXPORT FUNCTION
+    //
+    
+    func exportPDF(_ file: String!) {
+        let composer = ReportsComposer()
+        let reportHTML = composer.renderHourlist(school: "lumo", schoolclass: " ", teachername: "Sakari", worktimes: work)
+        composer.renderHTMLtoPDF(reportHTML!, filename: file)
+    }
     
     /*
     // MARK: - Navigation

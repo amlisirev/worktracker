@@ -74,4 +74,22 @@ class ReportsComposer: NSObject {
         return dateformat.string(from: setdate)
     }
     
+    func renderHTMLtoPDF(_ HTMLContent: String, filename: String) {
+        let pageRenderer = A4PageRenderer()
+        let printFormatter = UIMarkupTextPrintFormatter(markupText: HTMLContent)
+        pageRenderer.addPrintFormatter(printFormatter, startingAtPageAt: 0)
+        
+        let pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, CGRect.zero, nil)
+        UIGraphicsBeginPDFPage()
+        pageRenderer.drawPage(at: 0, in: UIGraphicsGetPDFContextBounds())
+        UIGraphicsEndPDFContext()
+        
+        let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        let fileURL = URL(fileURLWithPath: (filename + ".pdf"), isDirectory: false, relativeTo: documentsURL.first)
+        pdfData.write(to: fileURL, atomically: true)
+        print("saved " + fileURL.description)
+
+    }
+    
 }

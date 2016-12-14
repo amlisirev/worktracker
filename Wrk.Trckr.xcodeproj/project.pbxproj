@@ -17,6 +17,7 @@
 		747D815A1E004714008E3E4F /* row_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 747D81591E004714008E3E4F /* row_item.html */; };
 		747D815C1E004872008E3E4F /* ReportsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815B1E004872008E3E4F /* ReportsComposer.swift */; };
 		747D815E1E00A425008E3E4F /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815D1E00A425008E3E4F /* PreviewViewController.swift */; };
+		747D81601E00AE16008E3E4F /* A4PageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */; };
 		7489717C1DFC6CCA0062BADF /* WorktimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */; };
 		7489717E1DFC6CE30062BADF /* WorktimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7489717D1DFC6CE30062BADF /* WorktimeCell.xib */; };
 		74AF26711DF75465006342A4 /* WorktimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AF26701DF75465006342A4 /* WorktimeListViewController.swift */; };
@@ -64,6 +65,7 @@
 		747D81591E004714008E3E4F /* row_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = row_item.html; sourceTree = "<group>"; };
 		747D815B1E004872008E3E4F /* ReportsComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsComposer.swift; sourceTree = "<group>"; };
 		747D815D1E00A425008E3E4F /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A4PageRenderer.swift; sourceTree = "<group>"; };
 		7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeCell.swift; sourceTree = "<group>"; };
 		7489717D1DFC6CE30062BADF /* WorktimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorktimeCell.xib; sourceTree = "<group>"; };
 		74AF26701DF75465006342A4 /* WorktimeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeListViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				747D815B1E004872008E3E4F /* ReportsComposer.swift */,
+				747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */,
 				747D815D1E00A425008E3E4F /* PreviewViewController.swift */,
 				744B89D61DFEDDA1007A81B6 /* Model */,
 				74C7F67B1DF08F7E00D11CA0 /* AppDelegate.swift */,
@@ -365,6 +368,7 @@
 				7423C97E1DF1892500669D37 /* ReportsViewController.swift in Sources */,
 				74F6E8951DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift in Sources */,
 				74F6E8921DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift in Sources */,
+				747D81601E00AE16008E3E4F /* A4PageRenderer.swift in Sources */,
 				7411A51A1DF0CC170000DDFD /* wrkwrk.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

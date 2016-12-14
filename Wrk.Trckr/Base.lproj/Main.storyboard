@@ -165,8 +165,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Export" id="03t-zj-Wcg">
                                             <connections>
-                                                <action selector="Export:" destination="3ew-bc-GGd" id="HQ9-ed-4Y1"/>
-                                                <segue destination="zZX-TT-9Ok" kind="show" identifier="exportPreview" id="DAK-ab-U5O"/>
+                                                <action selector="Export:" destination="3ew-bc-GGd" id="QC1-Y2-kMg"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
