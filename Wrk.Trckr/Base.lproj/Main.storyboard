@@ -55,7 +55,7 @@
         <!--Settings-->
         <scene sceneID="Txb-Xe-EvJ">
             <objects>
-                <viewController id="DoP-wl-XyT" userLabel="Settings" sceneMemberID="viewController">
+                <viewController id="DoP-wl-XyT" userLabel="Settings" customClass="SettingsViewController" customModule="Wrk_Trckr" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mxy-hw-7id"/>
                         <viewControllerLayoutGuide type="bottom" id="ftT-zl-LVP"/>
@@ -63,13 +63,68 @@
                     <view key="view" contentMode="scaleToFill" id="M1J-z9-j4g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxf-Pd-Vxs">
+                                <frame key="frameInset" minX="56" minY="86" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-ir-uqe" userLabel="fullname">
+                                <frame key="frameInset" minX="56" minY="115" width="249" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="IFB-2N-egX"/>
+                                    <constraint firstAttribute="height" constant="30" id="xDk-oa-Uru"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-lj-x01" userLabel="workplace">
+                                <frame key="frameInset" minX="56" minY="210" width="249" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-sC-0iN">
+                                <frame key="frameInset" minX="142" minY="323" width="77" height="45"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveAction:" destination="DoP-wl-XyT" eventType="touchUpInside" id="COx-2Y-yFe"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Place of work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-46-oEJ">
+                                <frame key="frameInset" minX="56" minY="181" width="249" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nxx-sC-0iN" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="3f2-5k-9hL"/>
+                            <constraint firstItem="P2b-lj-x01" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="BlL-lx-HKm"/>
+                            <constraint firstItem="Zxf-Pd-Vxs" firstAttribute="top" secondItem="mxy-hw-7id" secondAttribute="bottom" constant="66" id="J9B-Tf-tex"/>
+                            <constraint firstItem="2i2-ir-uqe" firstAttribute="height" secondItem="P2b-lj-x01" secondAttribute="height" id="RoV-16-rhS"/>
+                            <constraint firstItem="2i2-ir-uqe" firstAttribute="width" secondItem="P2b-lj-x01" secondAttribute="width" id="StO-rR-ZPt"/>
+                            <constraint firstItem="Ya5-46-oEJ" firstAttribute="top" secondItem="2i2-ir-uqe" secondAttribute="bottom" constant="36" id="Xac-VE-Cdp"/>
+                            <constraint firstItem="2i2-ir-uqe" firstAttribute="top" secondItem="Zxf-Pd-Vxs" secondAttribute="bottom" constant="8" id="YfB-f3-WV2"/>
+                            <constraint firstItem="2i2-ir-uqe" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="buJ-LH-EOP"/>
+                            <constraint firstItem="Ya5-46-oEJ" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="fOe-BP-E0b"/>
+                            <constraint firstItem="Zxf-Pd-Vxs" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="izA-8z-MOe"/>
+                            <constraint firstItem="P2b-lj-x01" firstAttribute="top" secondItem="Ya5-46-oEJ" secondAttribute="bottom" constant="8" id="t3S-ZA-7yY"/>
+                            <constraint firstItem="nxx-sC-0iN" firstAttribute="top" secondItem="P2b-lj-x01" secondAttribute="bottom" constant="83" id="xrR-27-lzP"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="jkb-Xe-CAB" userLabel="Settings"/>
+                    <connections>
+                        <outlet property="fullname" destination="2i2-ir-uqe" id="7Zi-QN-fz4"/>
+                        <outlet property="workplace" destination="P2b-lj-x01" id="rgl-3S-VVJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fur-Cd-i7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1343" y="976"/>
+            <point key="canvasLocation" x="-1343.2" y="975.56221889055485"/>
         </scene>
         <!--DatePicker-->
         <scene sceneID="z4m-xT-qcF">
@@ -423,8 +478,8 @@
         <image name="trackerIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fJl-Oh-4W8"/>
         <segue reference="h1r-ro-Iuv"/>
+        <segue reference="DDE-LP-m9W"/>
         <segue reference="Zyv-Zc-UED"/>
     </inferredMetricsTieBreakers>
 </document>

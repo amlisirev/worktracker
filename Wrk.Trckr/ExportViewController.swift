@@ -75,7 +75,10 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     
     func exportPDF(_ file: String!) {
         let composer = ReportsComposer()
-        let reportHTML = composer.renderHourlist(school: "lumo", schoolclass: " ", teachername: "Sakari", worktimes: work)
+        let defaults = UserDefaults.standard
+        let workplace = defaults.string(forKey: "workplace") ?? "workplace_placeholder"
+        let fullname = defaults.string(forKey: "fullname") ?? "fullname_placeholder"
+        let reportHTML = composer.renderHourlist(school: workplace, schoolclass: " ", teachername: fullname, worktimes: work)
         composer.renderHTMLStringPagesToPDF(reportHTML, filename: file)
     }
     
