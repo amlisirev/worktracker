@@ -11,8 +11,13 @@
 		7411A51A1DF0CC170000DDFD /* wrkwrk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7411A5181DF0CC170000DDFD /* wrkwrk.xcdatamodeld */; };
 		7423C97E1DF1892500669D37 /* ReportsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423C97D1DF1892500669D37 /* ReportsViewController.swift */; };
 		7423C9801DF1893900669D37 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7423C97F1DF1893900669D37 /* TrackerViewController.swift */; };
+		742E67C11DFF6AFE00B992A5 /* hourlist.html in Resources */ = {isa = PBXBuildFile; fileRef = 742E67C01DFF6AFE00B992A5 /* hourlist.html */; };
 		7456BDCA1DF4AA430086C3BD /* JobTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */; };
 		7459B93F1DFCBCB900572D51 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7459B93E1DFCBCB900572D51 /* SettingsViewController.swift */; };
+		747D815A1E004714008E3E4F /* row_item.html in Resources */ = {isa = PBXBuildFile; fileRef = 747D81591E004714008E3E4F /* row_item.html */; };
+		747D815C1E004872008E3E4F /* ReportsComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815B1E004872008E3E4F /* ReportsComposer.swift */; };
+		747D815E1E00A425008E3E4F /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815D1E00A425008E3E4F /* PreviewViewController.swift */; };
+		747D81601E00AE16008E3E4F /* A4PageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */; };
 		7489717C1DFC6CCA0062BADF /* WorktimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */; };
 		7489717E1DFC6CE30062BADF /* WorktimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7489717D1DFC6CE30062BADF /* WorktimeCell.xib */; };
 		74AF26711DF75465006342A4 /* WorktimeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AF26701DF75465006342A4 /* WorktimeListViewController.swift */; };
@@ -54,8 +59,13 @@
 		7411A5191DF0CC170000DDFD /* wrkwrk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = wrkwrk.xcdatamodel; sourceTree = "<group>"; };
 		7423C97D1DF1892500669D37 /* ReportsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsViewController.swift; sourceTree = "<group>"; };
 		7423C97F1DF1893900669D37 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
+		742E67C01DFF6AFE00B992A5 /* hourlist.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = hourlist.html; sourceTree = "<group>"; };
 		7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobTitleCell.swift; sourceTree = "<group>"; };
 		7459B93E1DFCBCB900572D51 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		747D81591E004714008E3E4F /* row_item.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = row_item.html; sourceTree = "<group>"; };
+		747D815B1E004872008E3E4F /* ReportsComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportsComposer.swift; sourceTree = "<group>"; };
+		747D815D1E00A425008E3E4F /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = A4PageRenderer.swift; sourceTree = "<group>"; };
 		7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeCell.swift; sourceTree = "<group>"; };
 		7489717D1DFC6CE30062BADF /* WorktimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorktimeCell.xib; sourceTree = "<group>"; };
 		74AF26701DF75465006342A4 /* WorktimeListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorktimeListViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +125,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		742E67BF1DFF6AD200B992A5 /* ExportTemplates */ = {
+			isa = PBXGroup;
+			children = (
+				742E67C01DFF6AFE00B992A5 /* hourlist.html */,
+				747D81591E004714008E3E4F /* row_item.html */,
+			);
+			name = ExportTemplates;
+			sourceTree = "<group>";
+		};
 		744B89D61DFEDDA1007A81B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +169,9 @@
 		74C7F67A1DF08F7E00D11CA0 /* Wrk.Trckr */ = {
 			isa = PBXGroup;
 			children = (
+				747D815B1E004872008E3E4F /* ReportsComposer.swift */,
+				747D815F1E00AE16008E3E4F /* A4PageRenderer.swift */,
+				747D815D1E00A425008E3E4F /* PreviewViewController.swift */,
 				744B89D61DFEDDA1007A81B6 /* Model */,
 				74C7F67B1DF08F7E00D11CA0 /* AppDelegate.swift */,
 				7423C97D1DF1892500669D37 /* ReportsViewController.swift */,
@@ -162,6 +184,7 @@
 				74AF26701DF75465006342A4 /* WorktimeListViewController.swift */,
 				74C48C6D1DF6035F004623DE /* JobTitleCellView.xib */,
 				7456BDC91DF4AA430086C3BD /* JobTitleCell.swift */,
+				742E67BF1DFF6AD200B992A5 /* ExportTemplates */,
 				7489717B1DFC6CCA0062BADF /* WorktimeCell.swift */,
 				7489717D1DFC6CE30062BADF /* WorktimeCell.xib */,
 				74C7F6841DF08F7E00D11CA0 /* Assets.xcassets */,
@@ -298,6 +321,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742E67C11DFF6AFE00B992A5 /* hourlist.html in Resources */,
+				747D815A1E004714008E3E4F /* row_item.html in Resources */,
 				74C7F6881DF08F7E00D11CA0 /* LaunchScreen.storyboard in Resources */,
 				74C7F6851DF08F7E00D11CA0 /* Assets.xcassets in Resources */,
 				74C48C6E1DF6035F004623DE /* JobTitleCellView.xib in Resources */,
@@ -330,10 +355,12 @@
 				74AF26711DF75465006342A4 /* WorktimeListViewController.swift in Sources */,
 				7489717C1DFC6CCA0062BADF /* WorktimeCell.swift in Sources */,
 				7459B93F1DFCBCB900572D51 /* SettingsViewController.swift in Sources */,
+				747D815E1E00A425008E3E4F /* PreviewViewController.swift in Sources */,
 				74AF26731DF7549F006342A4 /* WorktimeEditViewController.swift in Sources */,
 				74F6E8911DFE0C3A00EC5D2E /* Jobtitle+CoreDataClass.swift in Sources */,
 				74AF26771DF7576A006342A4 /* ExportViewController.swift in Sources */,
 				74AF26751DF7574F006342A4 /* ReportsDatePickerViewController.swift in Sources */,
+				747D815C1E004872008E3E4F /* ReportsComposer.swift in Sources */,
 				74C7F67C1DF08F7E00D11CA0 /* AppDelegate.swift in Sources */,
 				7423C9801DF1893900669D37 /* TrackerViewController.swift in Sources */,
 				7456BDCA1DF4AA430086C3BD /* JobTitleCell.swift in Sources */,
@@ -341,6 +368,7 @@
 				7423C97E1DF1892500669D37 /* ReportsViewController.swift in Sources */,
 				74F6E8951DFE0FF800EC5D2E /* Worktime+CoreDataClass.swift in Sources */,
 				74F6E8921DFE0C3A00EC5D2E /* Jobtitle+CoreDataProperties.swift in Sources */,
+				747D81601E00AE16008E3E4F /* A4PageRenderer.swift in Sources */,
 				7411A51A1DF0CC170000DDFD /* wrkwrk.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,28 +1,24 @@
 //
-//  SettingsViewController.swift
+//  PreviewViewController.swift
 //  Wrk.Trckr
 //
-//  Created by Sakari Ikonen on 11/12/2016.
+//  Created by Sakari Ikonen on 13/12/2016.
 //  Copyright © 2016 Sakari Ikonen. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-
-    @IBOutlet weak var fullname: UITextField!
-    @IBOutlet weak var workplace: UITextField!
+class PreviewViewController: UIViewController {
+    var reportsComposer: ReportsComposer!
+    var HTMLContent: String!
+    var worktimes: [Worktime] = []
     
-    @IBAction func saveAction(_ sender: AnyObject) {
-        let defaults = UserDefaults.standard
-        defaults.set(fullname.text!, forKey: "fullname")
-        defaults.set(workplace.text!, forKey: "workplace")
-    }
+    @IBOutlet weak var webPreview: UIWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = UserDefaults.standard
-        fullname.text = defaults.string(forKey: "fullname")
-        workplace.text = defaults.string(forKey: "workplace")
+        createReportAsHTML()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -32,7 +28,12 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    func createReportAsHTML() {
+        reportsComposer = ReportsComposer()
+        let reportHTML = reportsComposer.renderHourlist(school: "lumo", schoolclass: " ", teachername: "Sakari", worktimes: worktimes).first
+        webPreview.loadHTMLString(reportHTML!, baseURL: URL(string: reportsComposer.pathToHourlistTemplate!))
+        HTMLContent = reportHTML
+    }
     /*
     // MARK: - Navigation
 

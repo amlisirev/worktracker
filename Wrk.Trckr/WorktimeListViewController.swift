@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class WorktimeListViewController: UIViewController, UITableViewDataSource {
+class WorktimeListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var worktimeTableView: UITableView!
     weak var job: Jobtitle!
@@ -21,7 +21,7 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource {
         // title = "Hours for " + job.name as! String
         // WHY WONT THIS WORK!
         // worktimes = job.worktimes as! [Worktime]
-        worktimes = job.finishedWorktimes()
+        getData()
         // Do any additional setup after loading the view.
     }
 
@@ -42,6 +42,27 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource {
         cell.setHoursFromInterval(workrow.duration())
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete" ) { (action, indexPath) in
+            let deletework = self.worktimes[indexPath.row]
+            context.delete(deletework)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            self.getData()
+            self.worktimeTableView.reloadData()
+        }
+        return [deleteAction]
+    }
+    
+    
+    // COREDATA STUFF
+    //
+    
+    func getData() {
+        worktimes = job.finishedWorktimes()
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -18,24 +18,31 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     var work: [Worktime] = []
     
     @IBAction func Export(_ sender: AnyObject) {
+        let filenameAlert = UIAlertController(title: "Export as PDF", message: "choose filename", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action: UIAlertAction) -> Void in }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [unowned self] action in
+           guard let textField = filenameAlert.textFields?.first,
+            let filename = textField.text else {
+                return
+            }
+        self.exportPDF(filename)
+        }
+        
+        filenameAlert.addTextField { (textField: UITextField) -> Void in}
+        filenameAlert.addAction(cancelAction)
+        filenameAlert.addAction(saveAction)
+        present(filenameAlert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("you got this far, export!!!", jobs.count)
         worktimeTableView.register(UINib(nibName: "WorktimeCell", bundle: nil), forCellReuseIdentifier: "WorktimeCell")
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let sortBy = NSSortDescriptor(key: "start", ascending: false)
-        let searchBy = NSPredicate(format: "(job IN %@)", jobs)
-        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        request.sortDescriptors = [sortBy]
-        request.predicate = searchBy
-        do {
-            work = try context.fetch(request)
-        } catch {
-            print("fetching worktimes failed")
-        }
+        getData()
         worktimeTableView.reloadData()
+        print(startDate.description + " jeejee DATE " + endDate.description)
 
         // Do any additional setup after loading the view.
     }
@@ -63,7 +70,36 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         
     }
     
+    // EXPORT FUNCTION
+    //
     
+    func exportPDF(_ file: String!) {
+        let composer = ReportsComposer()
+        let defaults = UserDefaults.standard
+        let workplace = defaults.string(forKey: "workplace") ?? "workplace_placeholder"
+        let fullname = defaults.string(forKey: "fullname") ?? "fullname_placeholder"
+        let reportHTML = composer.renderHourlist(school: workplace, schoolclass: " ", teachername: fullname, worktimes: work)
+        composer.renderHTMLStringPagesToPDF(reportHTML, filename: file)
+    }
+    
+    
+    // COREDATA
+    func getData() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let sortBy = NSSortDescriptor(key: "start", ascending: false)
+        let searchByJobs = NSPredicate(format: "(job IN %@)", jobs)
+        let searchByStart = NSPredicate(format: "start >= %@", startDate)
+        let searchByEnd = NSPredicate(format: "end <= %@", endDate)
+        let compoundSearch = NSCompoundPredicate(andPredicateWithSubpredicates: [searchByJobs,searchByStart, searchByEnd])
+        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
+        request.sortDescriptors = [sortBy]
+        request.predicate = compoundSearch
+        do {
+            work = try context.fetch(request)
+        } catch {
+            print("fetching worktimes failed")
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -80,6 +116,11 @@ class ExportViewController: UIViewController, UITableViewDataSource {
             controller.savedStart = startDate
             controller.savedEnd = endDate
             print("triggered back segue in export!")
+        }
+        
+        if segue.identifier == "exportPreview" {
+            let controller = segue.destination as! PreviewViewController
+            controller.worktimes = work
         }
     }
 
