@@ -36,4 +36,35 @@ public class Worktime: NSManagedObject {
         }
         return elapsed
     }
+    
+    class func worktimesForJobAndDates(_ context: NSManagedObjectContext, jobs: [Jobtitle], startDate: NSDate, endDate: NSDate) -> [Worktime] {
+        let sortBy = NSSortDescriptor(key: "start", ascending: false)
+        let searchByJobs = NSPredicate(format: "(job IN %@)", jobs)
+        let searchByStart = NSPredicate(format: "start >= %@", dateAtMidnight(startDate, startOfDay: true))
+        let searchByEnd = NSPredicate(format: "end <= %@", dateAtMidnight(endDate, startOfDay: false))
+        let compoundSearch = NSCompoundPredicate(andPredicateWithSubpredicates: [searchByJobs,searchByStart, searchByEnd])
+        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
+        request.sortDescriptors = [sortBy]
+        request.predicate = compoundSearch
+        var work: [Worktime] = []
+        do {
+            work = try context.fetch(request)
+        } catch {
+            print("fetching worktimes failed")
+        }
+        return work
+    }
+    
+    class func dateAtMidnight(_ date: NSDate!, startOfDay: Bool) -> NSDate {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day], from: date as Date)
+        
+        let num = startOfDay ? 00 : 59
+        components.hour = num
+        components.minute = num
+        components.second = num
+        
+        let newdate = calendar.date(from: components)! as NSDate
+        return newdate
+    }
 }

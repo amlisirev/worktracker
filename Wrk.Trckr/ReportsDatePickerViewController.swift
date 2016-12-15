@@ -26,7 +26,6 @@ class ReportsDatePickerViewController: UIViewController {
             self.startDate.setDate(savedStart! as Date, animated: true)
             print("segue did set dates")
         }
-        
         print("got this many jobs at datepicker start", jobs.count)
 
         // Do any additional setup after loading the view.

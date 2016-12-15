@@ -12,8 +12,9 @@ import CoreData
 class ExportViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var worktimeTableView: UITableView!
-    weak var startDate: NSDate!
-    weak var endDate: NSDate!
+    // can't be weak or they wont get set in the segue!
+    var startDate: NSDate!
+    var endDate: NSDate!
     var jobs: [Jobtitle] = []
     var work: [Worktime] = []
     
@@ -86,19 +87,7 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     // COREDATA
     func getData() {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        let sortBy = NSSortDescriptor(key: "start", ascending: false)
-        let searchByJobs = NSPredicate(format: "(job IN %@)", jobs)
-        let searchByStart = NSPredicate(format: "start >= %@", startDate)
-        let searchByEnd = NSPredicate(format: "end <= %@", endDate)
-        let compoundSearch = NSCompoundPredicate(andPredicateWithSubpredicates: [searchByJobs,searchByStart, searchByEnd])
-        let request: NSFetchRequest<Worktime> = Worktime.fetchRequest()
-        request.sortDescriptors = [sortBy]
-        request.predicate = compoundSearch
-        do {
-            work = try context.fetch(request)
-        } catch {
-            print("fetching worktimes failed")
-        }
+        work = Worktime.worktimesForJobAndDates(context, jobs: jobs, startDate: startDate, endDate: endDate)
     }
     /*
     // MARK: - Navigation
