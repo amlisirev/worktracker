@@ -52,7 +52,14 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource, UITab
             self.getData()
             self.worktimeTableView.reloadData()
         }
-        return [deleteAction]
+        
+        // there should be a backgroundColor: variable, doesn't work with value UIColor.green   :((
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "Edit") { (action, indexPath) in
+            self.performSegue(withIdentifier: "editWorktime", sender: indexPath)
+        }
+        
+        return [deleteAction, editAction]
     }
     
     
@@ -75,7 +82,7 @@ class WorktimeListViewController: UIViewController, UITableViewDataSource, UITab
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editWorktime" {
             let controller = segue.destination as! WorktimeEditViewController
-            controller.worktime = worktimes[(worktimeTableView.indexPathForSelectedRow?.row)!]
+            controller.worktime = worktimes[(sender as! IndexPath).row]
         }
     }
 

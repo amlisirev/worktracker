@@ -18,6 +18,7 @@ class WorktimeEditViewController: UIViewController {
         worktime.start = startTime.date as NSDate
         worktime.end = endTime.date as NSDate
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        performSegue(withIdentifier: "backToWorktimeList", sender: nil)
         
     }
 

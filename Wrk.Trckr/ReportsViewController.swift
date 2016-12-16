@@ -60,6 +60,15 @@ class ReportsViewController: UIViewController, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "chooseDates" {
+            return (jobTableView.indexPathsForSelectedRows == nil) ? false : true
+        }
+        // basket return for all other segues
+        return true
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "chooseDates" {
             let controller = segue.destination as! ReportsDatePickerViewController

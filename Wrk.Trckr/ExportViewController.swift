@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MessageUI
 
 class ExportViewController: UIViewController, UITableViewDataSource {
 
@@ -17,6 +18,9 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     var endDate: NSDate!
     var jobs: [Jobtitle] = []
     var work: [Worktime] = []
+    
+    // variables necessary for pdfcomposer
+    var composer: ReportsComposer!
     
     @IBAction func Export(_ sender: AnyObject) {
         let filenameAlert = UIAlertController(title: "Export as PDF", message: "choose filename", preferredStyle: .alert)
@@ -29,6 +33,7 @@ class ExportViewController: UIViewController, UITableViewDataSource {
                 return
             }
         self.exportPDF(filename)
+        self.showEmailAlert()
         }
         
         filenameAlert.addTextField { (textField: UITextField) -> Void in}
@@ -75,7 +80,7 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     //
     
     func exportPDF(_ file: String!) {
-        let composer = ReportsComposer()
+        composer = ReportsComposer()
         let defaults = UserDefaults.standard
         let workplace = defaults.string(forKey: "workplace") ?? "workplace_placeholder"
         let fullname = defaults.string(forKey: "fullname") ?? "fullname_placeholder"
@@ -83,6 +88,33 @@ class ExportViewController: UIViewController, UITableViewDataSource {
         composer.renderHTMLStringPagesToPDF(reportHTML, filename: file)
     }
     
+    // send mail if possible!
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.setSubject("your latest work report")
+            mail.setMessageBody("The latest report of my work hours", isHTML: false)
+            mail.addAttachmentData(NSData(contentsOf: composer.fileURL)! as Data, mimeType: "application/pdf", fileName: composer.filename)
+            present(mail, animated:true, completion: nil)
+        }
+    }
+    // custom popup alerts!
+    
+    func showEmailAlert() {
+        let alert = UIAlertController(title: "PDF created successfully", message: "Would you like to send it to someone?", preferredStyle: .alert)
+        let mailAction = UIAlertAction(title: "Send", style: .default) { [unowned self] action in
+            DispatchQueue.main.async {
+                self.sendMail()
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default) {(action: UIAlertAction) -> Void in}
+        
+        alert.addAction(cancelAction)
+        alert.addAction(mailAction)
+        present(alert, animated: true, completion: nil)
+    }
     
     // COREDATA
     func getData() {

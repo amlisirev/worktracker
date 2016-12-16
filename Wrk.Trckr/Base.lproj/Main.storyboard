@@ -350,15 +350,10 @@
                                                 <segue destination="Q9T-VY-Kr6" kind="show" id="fJl-Oh-4W8"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="s2A-xZ-tDT">
-                                            <connections>
-                                                <segue destination="MNX-XK-vKU" kind="show" identifier="editWorktime" id="Mjp-qS-AKp"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-Nq-XO0">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Atl-Nq-XO0">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="xmm-a0-LIa" id="aIJ-bI-4oA"/>
@@ -376,6 +371,7 @@
                     </view>
                     <connections>
                         <outlet property="worktimeTableView" destination="Atl-Nq-XO0" id="swS-C5-gW0"/>
+                        <segue destination="MNX-XK-vKU" kind="show" identifier="editWorktime" id="Qaq-fw-bez"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnN-Ot-ufk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -478,8 +474,8 @@
         <image name="trackerIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="h1r-ro-Iuv"/>
-        <segue reference="DDE-LP-m9W"/>
-        <segue reference="Zyv-Zc-UED"/>
+        <segue reference="fJl-Oh-4W8"/>
+        <segue reference="GTo-v1-SrW"/>
+        <segue reference="ayc-8o-SXE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -95,11 +95,14 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
             self.reloadTable()
         }
         
-        let editAction = UITableViewRowAction(style: .normal, title: "Edit") {(action, indexPath) in
+        let editAction = UITableViewRowAction(style: .normal, title: "Worktimes") {(action, indexPath) in
             self.performSegue(withIdentifier: "worktimeListForJob", sender: indexPath)
         }
         
-        return [deleteAction, editAction]
+        let editJobAction = UITableViewRowAction(style: .normal, title: "Edit") {(action, indexPath) in
+        }
+        
+        return [deleteAction, editAction, editJobAction]
         
     }
     

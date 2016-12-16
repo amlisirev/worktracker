@@ -14,6 +14,8 @@ class ReportsComposer: NSObject {
     let pathToRowitemTemplate = Bundle.main.path(forResource: "row_item", ofType: "html")
     var pageCount: NSInteger!
     var itemsPerPage: NSInteger!
+    var fileURL: URL!
+    var filename: String = ""
     
     override init() {
         super.init()
@@ -39,7 +41,6 @@ class ReportsComposer: NSObject {
             stringPages.append(renderHourlistPage(school: school, schoolclass: schoolclass, teachername: teachername, worktimes: page))
         }
         pageCount = stringPages.count
-        print("pages after render", stringPages.count)
         return stringPages
         
     }
@@ -116,8 +117,9 @@ class ReportsComposer: NSObject {
         }
         UIGraphicsEndPDFContext()
         
+        self.filename = filename
         let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let fileURL = URL(fileURLWithPath: (filename + ".pdf"), isDirectory: false, relativeTo: documentsURL.first)
+        fileURL = URL(fileURLWithPath: (filename + ".pdf"), isDirectory: false, relativeTo: documentsURL.first)
         pdfData.write(to: fileURL, atomically: true)
         print("saved " + fileURL.description)
     }
