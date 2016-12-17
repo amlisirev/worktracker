@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import MessageUI
 
-class ExportViewController: UIViewController, UITableViewDataSource {
+class ExportViewController: UIViewController, UITableViewDataSource, MFMailComposeViewControllerDelegate {
 
     @IBOutlet weak var worktimeTableView: UITableView!
     // can't be weak or they wont get set in the segue!
@@ -89,6 +89,7 @@ class ExportViewController: UIViewController, UITableViewDataSource {
     }
     
     // send mail if possible!
+    // also mail delegate functions!
     
     func sendMail() {
         if MFMailComposeViewController.canSendMail() {
@@ -98,6 +99,10 @@ class ExportViewController: UIViewController, UITableViewDataSource {
             mail.addAttachmentData(NSData(contentsOf: composer.fileURL)! as Data, mimeType: "application/pdf", fileName: composer.filename)
             present(mail, animated:true, completion: nil)
         }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
     // custom popup alerts!
     
