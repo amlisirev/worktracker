@@ -134,7 +134,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
             if openjob.first != nil {
                 work = openjob.first!
                 work.end = stampdate
-                print("STAMPED OUT", job.name)
+                print("STAMPED OUT", job.name!)
             } else {
                 let openjobs = Worktime.openWorktimes(context: context)
                 if !openjobs.isEmpty {

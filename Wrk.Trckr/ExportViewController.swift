@@ -94,6 +94,7 @@ class ExportViewController: UIViewController, UITableViewDataSource, MFMailCompo
     func sendMail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
             mail.setSubject("your latest work report")
             mail.setMessageBody("The latest report of my work hours", isHTML: false)
             mail.addAttachmentData(NSData(contentsOf: composer.fileURL)! as Data, mimeType: "application/pdf", fileName: composer.filename)
