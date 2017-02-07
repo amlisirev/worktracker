@@ -59,10 +59,9 @@ public class Worktime: NSManagedObject {
         let calendar = Calendar.current
         var components = calendar.dateComponents([.year, .month, .day], from: date as Date)
         
-        let num = startOfDay ? 00 : 59
-        components.hour = num
-        components.minute = num
-        components.second = num
+        components.hour = startOfDay ? 00 : 23
+        components.minute = startOfDay ? 00 : 59
+        components.second = startOfDay ? 00 : 59
         
         let newdate = calendar.date(from: components)! as NSDate
         return newdate
