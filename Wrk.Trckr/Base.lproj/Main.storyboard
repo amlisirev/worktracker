@@ -53,80 +53,6 @@
             </objects>
             <point key="canvasLocation" x="527.20000000000005" y="274.81259370314842"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="Txb-Xe-EvJ">
-            <objects>
-                <viewController id="DoP-wl-XyT" userLabel="Settings" customClass="SettingsViewController" customModule="Wrk_Trckr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mxy-hw-7id"/>
-                        <viewControllerLayoutGuide type="bottom" id="ftT-zl-LVP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="M1J-z9-j4g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zxf-Pd-Vxs">
-                                <rect key="frame" x="149.5" y="86" width="76.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2i2-ir-uqe" userLabel="fullname">
-                                <rect key="frame" x="63" y="115" width="249" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="249" id="IFB-2N-egX"/>
-                                    <constraint firstAttribute="height" constant="30" id="xDk-oa-Uru"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2b-lj-x01" userLabel="workplace">
-                                <rect key="frame" x="63" y="210" width="249" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxx-sC-0iN">
-                                <rect key="frame" x="170.5" y="323" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="saveAction:" destination="DoP-wl-XyT" eventType="touchUpInside" id="COx-2Y-yFe"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place of work" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ya5-46-oEJ">
-                                <rect key="frame" x="136" y="181" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="nxx-sC-0iN" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="3f2-5k-9hL"/>
-                            <constraint firstItem="P2b-lj-x01" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="BlL-lx-HKm"/>
-                            <constraint firstItem="Zxf-Pd-Vxs" firstAttribute="top" secondItem="mxy-hw-7id" secondAttribute="bottom" constant="66" id="J9B-Tf-tex"/>
-                            <constraint firstItem="2i2-ir-uqe" firstAttribute="height" secondItem="P2b-lj-x01" secondAttribute="height" id="RoV-16-rhS"/>
-                            <constraint firstItem="2i2-ir-uqe" firstAttribute="width" secondItem="P2b-lj-x01" secondAttribute="width" id="StO-rR-ZPt"/>
-                            <constraint firstItem="Ya5-46-oEJ" firstAttribute="top" secondItem="2i2-ir-uqe" secondAttribute="bottom" constant="36" id="Xac-VE-Cdp"/>
-                            <constraint firstItem="2i2-ir-uqe" firstAttribute="top" secondItem="Zxf-Pd-Vxs" secondAttribute="bottom" constant="8" id="YfB-f3-WV2"/>
-                            <constraint firstItem="2i2-ir-uqe" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="buJ-LH-EOP"/>
-                            <constraint firstItem="Ya5-46-oEJ" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="fOe-BP-E0b"/>
-                            <constraint firstItem="Zxf-Pd-Vxs" firstAttribute="centerX" secondItem="M1J-z9-j4g" secondAttribute="centerX" id="izA-8z-MOe"/>
-                            <constraint firstItem="P2b-lj-x01" firstAttribute="top" secondItem="Ya5-46-oEJ" secondAttribute="bottom" constant="8" id="t3S-ZA-7yY"/>
-                            <constraint firstItem="nxx-sC-0iN" firstAttribute="top" secondItem="P2b-lj-x01" secondAttribute="bottom" constant="83" id="xrR-27-lzP"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="jkb-Xe-CAB" userLabel="Settings"/>
-                    <connections>
-                        <outlet property="fullname" destination="2i2-ir-uqe" id="7Zi-QN-fz4"/>
-                        <outlet property="workplace" destination="P2b-lj-x01" id="rgl-3S-VVJ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fur-Cd-i7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1343.2" y="975.56221889055485"/>
-        </scene>
         <!--DatePicker-->
         <scene sceneID="z4m-xT-qcF">
             <objects>
@@ -415,12 +341,109 @@
                     <connections>
                         <segue destination="BoG-8n-QOB" kind="relationship" relationship="viewControllers" id="qzV-XS-wEm"/>
                         <segue destination="YZe-2R-HVJ" kind="relationship" relationship="viewControllers" id="gu7-mt-wVN"/>
-                        <segue destination="DoP-wl-XyT" kind="relationship" relationship="viewControllers" id="TAc-F5-25O"/>
+                        <segue destination="tKc-f3-CrQ" kind="relationship" relationship="viewControllers" id="fBI-u0-BtG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Z-at-B8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1362" y="-173"/>
+        </scene>
+        <!--Settings Controller-->
+        <scene sceneID="sRe-CS-gZl">
+            <objects>
+                <tableViewController id="tKc-f3-CrQ" userLabel="Settings Controller" customClass="SettingsViewController" customModule="Wrk_Trckr" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Dge-f5-hgW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DOM-z2-L5g" userLabel="Save">
+                            <rect key="frame" x="0.0" y="370" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Save"/>
+                            <connections>
+                                <action selector="saveAction:" destination="tKc-f3-CrQ" eventType="touchUpInside" id="5n1-Fw-mvG"/>
+                            </connections>
+                        </button>
+                        <sections>
+                            <tableViewSection headerTitle="Full name" footerTitle="Enter your full name" id="gfA-u5-5xd">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1rP-Tt-T2I">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rP-Tt-T2I" id="lf3-Ob-GT9">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAf-jW-6S8" userLabel="fullname">
+                                                    <rect key="frame" x="8" y="8" width="296" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Place of work" footerTitle="Company name" id="RIf-b1-ciT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2b7-JF-vlp">
+                                        <rect key="frame" x="0.0" y="176" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2b7-JF-vlp" id="jCp-oI-A2y">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Dn-NN-4SG" userLabel="workplace">
+                                                    <rect key="frame" x="8" y="8" width="335" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="default email" footerTitle="email address to send exported pdf to." id="zU9-kU-hnn">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gf4-kl-fhk">
+                                        <rect key="frame" x="0.0" y="296" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gf4-kl-fhk" id="VhI-3W-Udy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oey-He-QaA" userLabel="email">
+                                                    <rect key="frame" x="8" y="8" width="314" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="tKc-f3-CrQ" id="mG4-Z4-j2g"/>
+                            <outlet property="delegate" destination="tKc-f3-CrQ" id="Czp-fj-2Kc"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="laS-8Z-w32"/>
+                    <connections>
+                        <outlet property="email" destination="Oey-He-QaA" id="q8S-FJ-eMF"/>
+                        <outlet property="fullname" destination="CAf-jW-6S8" id="m7F-iJ-0W3"/>
+                        <outlet property="workplace" destination="9Dn-NN-4SG" id="DsZ-ni-rvA"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Vh-fv-WsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1402" y="709"/>
         </scene>
         <!--Reports-->
         <scene sceneID="7m8-AD-ZDB">
@@ -459,6 +482,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdE-Ym-Wnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-428" y="-513.19340329835086"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="TqW-bB-EgJ">
+            <objects>
+                <viewControllerPlaceholder id="kkw-6C-Pfg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HgP-vy-Yi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
