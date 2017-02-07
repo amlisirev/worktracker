@@ -16,6 +16,7 @@ class ReportsViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Reports"
         getData()
         jobTableView.register(UINib(nibName: "JobTitleCellView", bundle: nil), forCellReuseIdentifier: "JobCell")
         // Do any additional setup after loading the view.

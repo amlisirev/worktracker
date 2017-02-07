@@ -18,6 +18,7 @@ class ReportsDatePickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Date"
         // NOT WORKING YET, WTF!
         //
         //  goddamn.

@@ -44,6 +44,7 @@ class ExportViewController: UIViewController, UITableViewDataSource, MFMailCompo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Export"
         print("you got this far, export!!!", jobs.count)
         worktimeTableView.register(UINib(nibName: "WorktimeCell", bundle: nil), forCellReuseIdentifier: "WorktimeCell")
         getData()
