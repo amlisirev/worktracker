@@ -67,7 +67,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="D8y-ix-m1f" userLabel="endDate">
-                                <rect key="frame" x="27.5" y="369.5" width="320" height="233"/>
+                                <rect key="frame" x="27" y="370" width="320" height="234"/>
                                 <date key="date" timeIntervalSinceReferenceDate="502742363.73216099">
                                     <!--2016-12-06 18:39:23 +0000-->
                                 </date>
@@ -85,7 +85,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="rRk-wH-et3" userLabel="startDate">
-                                <rect key="frame" x="27.5" y="99" width="320" height="233.5"/>
+                                <rect key="frame" x="27" y="99" width="320" height="234"/>
                                 <date key="date" timeIntervalSinceReferenceDate="502742312.918917">
                                     <!--2016-12-06 18:38:32 +0000-->
                                 </date>
@@ -167,34 +167,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7il-sT-n02" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2292" y="275.71214392803603"/>
-        </scene>
-        <!--Preview View Controller-->
-        <scene sceneID="0Bn-Ug-tVz">
-            <objects>
-                <viewController id="zZX-TT-9Ok" customClass="PreviewViewController" customModule="Wrk_Trckr" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bCC-WQ-AXy"/>
-                        <viewControllerLayoutGuide type="bottom" id="dYO-16-7tJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4Us-KT-71C">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vHr-HM-CZ7">
-                                <rect key="frame" x="16" y="28" width="343" height="619"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="webPreview" destination="vHr-HM-CZ7" id="3Bc-WT-NOb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ciE-Ht-bp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3232.8000000000002" y="268.51574212893553"/>
         </scene>
         <!--wrktrckr-->
         <scene sceneID="sJ5-Rt-wB9">
@@ -492,13 +464,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gdE-Ym-Wnj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-428" y="-513.19340329835086"/>
-        </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="TqW-bB-EgJ">
-            <objects>
-                <viewControllerPlaceholder id="kkw-6C-Pfg" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgP-vy-Yi2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>
