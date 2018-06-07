@@ -189,7 +189,7 @@ class TrackerViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 
-    func updateTimer() {
+    @objc func updateTimer() {
         if (timerForWork != nil) {
             reloadTable()
         } else {
