@@ -9,7 +9,7 @@
 import UIKit
 
 class ReportsComposer: NSObject {
-
+    
     let pathToHourlistTemplate = Bundle.main.path(forResource: "hourlist", ofType: "html")
     let pathToRowitemTemplate = Bundle.main.path(forResource: "row_item", ofType: "html")
     var pageCount: NSInteger!
@@ -65,7 +65,7 @@ class ReportsComposer: NSObject {
                 rowHTML = rowHTML.replacingOccurrences(of: "#DESCRIPTION#", with: item.job!.name!)
                 
                 allRows += rowHTML
-                totalDur.add(item.duration())
+                totalDur += item.duration()
             }
             generatedHTML = generatedHTML.replacingOccurrences(of: "#ROWS#", with: allRows)
             generatedHTML = generatedHTML.replacingOccurrences(of: "#TOTALHOURS#", with: hoursFromInterval(totalDur))
